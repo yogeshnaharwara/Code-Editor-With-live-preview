@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Editor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            width: 100%;
+            display: flex;
+            height: 100vh;
+            background-color: yellow;
+        }
+
+        .leftPart {
+            flex-basis: 50%;
+            background-color:rgb(89, 89, 188);
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            border-radius: 2px solid black;
+
+        }
+
+        .leftPart .editor-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .leftPart .tabs {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+           margin: 5px 3px;
+           
+           
+        
+        }
+
+        .tab {
+            padding: 5px 10px;
+            font-size: 16px;
+            cursor: pointer;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #fff;
+        }
+
+        .tab:not(:last-child) {
+            margin-right: 10px;
+        }
+
+        .tab.active {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .editor {
+            width: 100%;
+            height: 90%;
+            padding: 10px;
+            font-size: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+
+
+
+        .content {
+            flex-basis: 100%;
+            background-color: white;
+        }
+
+        .rightPart {
+            flex-basis: 50%;
+            background-color: white;
+        }
+
+        .rightPart label {
+            display: block;
+            padding: 10px;
+            background-color: rgb(89, 89, 188);
+            color: white;
+            border-left: 2px solid black;
+        }
+
+        .rightPart iframe {
+            display: block;
+            width: 100%;
+            height: 93%;
+            box-sizing: border-box;
+            border: 2px solid black;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="leftPart">
+        <div class="editor-container">
+            <div class="tabs">
+                <button class="tab" data-target="html">HTML</button>
+                <button class="tab" data-target="css">CSS</button>
+                <button class="tab" data-target="js">JavaScript</button>
+            </div>
+            <textarea id="html" class="editor" placeholder="Write HTML here"></textarea>
+            <textarea id="css" class="editor hidden" placeholder="Write CSS here"></textarea>
+            <textarea id="js" class="editor hidden" placeholder="Write JavaScript here"></textarea>
+        </div>
+
+    </div>
+    <div class="rightPart">
+        <label>Output</label>
+        <iframe id="output"></iframe>
+    </div>
+
+</body>
+<script>
+
+    let output = document.querySelector("#output");
+
+    let allInput = document.querySelectorAll(".leftPart textarea")
+    let htmlCode, cssCode, jsCode = '';
+    allInput.forEach((el, index) => {
+        el.addEventListener("keyup", () => {
+            if (index == 0) {
+                htmlCode = el.value;
+
+            }
+            if (index == 1) {
+                cssCode = el.value;
+
+            }
+            if (index == 2) {
+                jsCode = el.value;
+
+            }
+            output.contentDocument.body.innerHTML = htmlCode;
+
+            output.contentDocument.head.innerHTML = `<style>${cssCode}</style>`;
+
+            output.contentWindow.eval(jsCode);
+
+        })
+    })
+    document.addEventListener('DOMContentLoaded', () => {
+        const tabs = document.querySelectorAll('.tab');
+        const textareas = document.querySelectorAll('.editor');
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove 'active' class from all tabs
+                tabs.forEach(t => t.classList.remove('active'));
+                // Hide all textareas
+                textareas.forEach(ta => ta.classList.add('hidden'));
+
+                // Add 'active' class to clicked tab
+                tab.classList.add('active');
+                // Show the corresponding textarea
+                const targetId = tab.getAttribute('data-target');
+                document.getElementById(targetId).classList.remove('hidden');
+            });
+        });
+    });
+</script>
+
+</html>

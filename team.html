@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Responsive team section</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: 'Space Grotesk', sans-serif;
+	text-decoration: none;
+}
+.team{
+	position: relative;
+	width: 100%;
+	height: 100vh;
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.team-content{
+	width: 100%;
+	max-width: 1350px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+	align-items: center;
+	gap: 2rem;
+	text-align: center;
+	margin-top: 4rem;
+}
+.team-content img{
+	width: 100%;
+	height: auto;
+	border-radius: 15px;
+	margin-bottom: 15px;
+}
+.center h1{
+	color: black;
+	font-size: 4rem;
+	text-align: center;
+}
+.box{
+	padding: 16px;
+	background: rgb(4, 78, 103);
+	border-radius: 15px;
+	transition: all .38s ease;
+}
+.box h3{
+	font-size: 23px;
+	font-weight: 600;
+	color: #fff;
+	margin-bottom: 8px;
+}
+.box h5{
+	font-size: 15px;
+	font-weight: 600;
+	color: #b7b4bb;
+	margin-bottom: 15px;
+	letter-spacing: 2px;
+}
+.icons i{
+	display: inline-block;
+	color: #fff;
+	font-size: 20px;
+	margin: 0 8px;
+	transition: all .38s ease;
+}
+.icons i:hover{
+	transform: scale(1.2);
+}
+.box:hover{
+	transform: translateY(-10px);
+	cursor: pointer;
+}
+
+@media(max-width: 1240px){
+	.team{
+		width: 100%;
+		height: auto;
+		padding: 90px 2%;
+	}
+	.center h1{
+		font-size: 3.2rem;
+	}
+}
+header {
+    background-color:rgb(4, 78, 103);
+    padding: 20px 0;
+}
+
+/* Styling for navigation */
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #ffcc00;
+}
+footer {
+    background-color:rgb(4, 78, 103);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+header .i{
+	text-align: center;
+	color: white;
+}
+  </style>
+</head>
+<body>
+
+	<header>
+		<h1 class="i">Our Team</h1>
+		<nav>
+		  <ul>
+			<li><a href="index.html">Home</a></li>
+			<li><a href="about.html">About</a></li>
+			<li><a href="features.html">Features</a></li>
+			<li><a href="contact.html">Contact</a></li>
+			<li><a href="editor.html">Editor</a></li>
+			
+		  </ul>
+		</nav>
+	  </header>
+
+	<section class="team">
+		
+
+		<div class="team-content">
+			<div class="box">
+				<img src="rg5.jpg">
+				<h3>Raghav rk</h3>
+				<h5>Artist</h5>
+				<div class="icons">
+					<a href="https://x.com/raghav_rk_01"><i class="ri-twitter-fill"></i></a>
+					<a href="https://www.facebook.com/raghav.rk.505?mibextid=qi2Omg&rdid=UWiDYurF5WWoMT8z&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FhbHFdCgD7jKYG6xa%2F%3Fmibextid%3Dqi2Omg"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/raghav.rk.01/?hl=en"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="sr.jpg">
+				<h3>Shubham Rathore</h3>
+				<h5>Artist</h5>
+				<div class="icons">
+					<a href="#"><i class="ri-twitter-fill"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=100052706045517&mibextid=kFxxJD"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/bittuurathore/?hl=en"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+
+
+			<div class="box">
+				<img src="rv.jpg">
+				<h3>Ravi jangid</h3>
+				<h5>Artist</h5>
+				<div class="icons">
+					<a href="https://x.com/ravi_7990?t=wsGSckBWM487VRZnKy7GHw&s=08"><i class="ri-twitter-fill"></i></a>
+					<a href="https://www.facebook.com/profile.php?id=100093680941048&mibextid=kFxxJD"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/13__yaar_ravi_17/?hl=en"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+			<div class="box">
+				<img src="mr.jpg">
+				<h3>Muskan Rajput</h3>
+				<h5>Artist</h5>
+				<div class="icons">
+					<a href="https://x.com/raghav_rk_01"><i class="ri-twitter-fill"></i></a> 
+					<a href="https://www.facebook.com/raghav.rk.505?mibextid=qi2Omg&rdid=UWiDYurF5WWoMT8z&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2FhbHFdCgD7jKYG6xa%2F%3Fmibextid%3Dqi2Omg"><i class="ri-facebook-box-fill"></i></a>
+					<a href="https://www.instagram.com/raghav.rk.01/?hl=en"><i class="ri-instagram-fill"></i></a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	<footer>
+		<p>&copy; Enjoy The Codding ❤️❤️</p>
+	</footer>
+	
+
+</body>
+</html>
